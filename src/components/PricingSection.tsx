@@ -10,36 +10,39 @@ const PricingSection = () => {
       price: "$9",
       features: [
         "10 Image to Video Conversions",
-        "720p Video Quality",
+        "420p Video Quality",
         "Basic Animation Effects",
         "24h Support",
       ],
       popular: false,
+      buttonClass: "border-white/20 bg-white/5 hover:bg-white/10",
     },
     {
       name: "Pro",
       price: "$29",
       features: [
         "100 Image to Video Conversions",
-        "1080p Video Quality",
+        "720p Video Quality",
         "Advanced Animation Effects",
         "Priority Support",
         "Custom Watermark",
       ],
       popular: true,
+      buttonClass: "futuristic-button",
     },
     {
       name: "Enterprise",
       price: "$99",
       features: [
         "Unlimited Conversions",
-        "4K Video Quality",
+        "720p Video Quality",
         "All Animation Effects",
         "24/7 Priority Support",
         "API Access",
         "Custom Integration",
       ],
       popular: false,
+      buttonClass: "border-white/20 bg-white/5 hover:bg-white/10",
     }
   ];
 
@@ -82,11 +85,7 @@ const PricingSection = () => {
               </ul>
               
               <Button 
-                className={`w-full ${
-                  plan.popular 
-                    ? 'futuristic-button' 
-                    : 'border-white/20 bg-white/5 hover:bg-white/10'
-                }`}
+                className={`w-full ${plan.buttonClass}`}
               >
                 Get Started
               </Button>

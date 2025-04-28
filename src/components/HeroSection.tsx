@@ -1,9 +1,14 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Upload, Play, Sparkles } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent } from '@/components/ui/card';
 
 const HeroSection = () => {
+  const [prompt, setPrompt] = useState('');
+
   return (
     <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
       {/* Background elements */}
@@ -31,33 +36,59 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
             Our cutting-edge AI technology brings your images to life with natural, fluid motion. Create stunning videos from still photos in seconds.
           </p>
-          
-          <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
-            <Button className="futuristic-button w-full sm:w-auto flex items-center space-x-2">
-              <Upload className="h-5 w-5" />
-              <span>Upload Image</span>
-            </Button>
-            
-            <Button variant="outline" className="border-white/20 bg-white/5 hover:bg-white/10 w-full sm:w-auto flex items-center space-x-2">
-              <Play className="h-5 w-5" />
-              <span>See Examples</span>
-            </Button>
-          </div>
         </div>
         
-        {/* Preview/Demo Window */}
-        <div className="w-full max-w-4xl rounded-xl overflow-hidden neon-border">
-          <div className="glass-panel w-full aspect-video flex items-center justify-center">
-            <div className="text-center space-y-4">
-              <div className="inline-flex justify-center items-center rounded-full h-16 w-16 bg-neon-purple/20 border border-neon-purple/30">
-                <Upload className="h-6 w-6 text-neon-purple" />
+        {/* Upload & Prompt Area */}
+        <Card className="w-full max-w-4xl rounded-xl overflow-hidden neon-border glass-panel">
+          <CardContent className="p-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Upload Area */}
+              <div className="flex flex-col space-y-4">
+                <h3 className="text-xl font-semibold">Upload Your Image</h3>
+                <div className="border-2 border-dashed border-white/20 rounded-lg p-8 text-center hover:border-neon-purple transition-colors h-[200px] flex items-center justify-center">
+                  <Input
+                    type="file"
+                    className="hidden"
+                    id="hero-image-upload"
+                    accept="image/*"
+                  />
+                  <label
+                    htmlFor="hero-image-upload"
+                    className="flex flex-col items-center cursor-pointer"
+                  >
+                    <Upload className="h-12 w-12 text-neon-purple mb-4" />
+                    <p className="text-lg font-medium mb-2">Drop your image here</p>
+                    <p className="text-sm text-gray-400">or click to browse</p>
+                  </label>
+                </div>
               </div>
-              <div className="text-gray-300">
-                <p className="font-medium">Drag and drop your image here</p>
-                <p className="text-sm text-gray-400">or click to browse</p>
+
+              {/* Prompt Area */}
+              <div className="flex flex-col space-y-4">
+                <h3 className="text-xl font-semibold">Describe Animation</h3>
+                <Textarea
+                  placeholder="Describe how you want your image animated. For example: 'Make the clouds move slowly across the sky'"
+                  className="flex-grow min-h-[140px] bg-white/5 border-white/20"
+                  value={prompt}
+                  onChange={(e) => setPrompt(e.target.value)}
+                />
               </div>
             </div>
-          </div>
+            
+            <div className="flex justify-center mt-6">
+              <Button className="futuristic-button w-full md:w-auto flex items-center space-x-2">
+                <Upload className="h-5 w-5" />
+                <span>Generate Video</span>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+        
+        <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+          <Button variant="outline" className="border-white/20 bg-white/5 hover:bg-white/10 w-full sm:w-auto flex items-center space-x-2">
+            <Play className="h-5 w-5" />
+            <span>See Examples</span>
+          </Button>
         </div>
       </div>
     </section>

@@ -4,7 +4,6 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
-import ImageUpload from '@/components/ImageUpload';
 import ExamplesSection from '@/components/ExamplesSection';
 import PricingSection from '@/components/PricingSection';
 import CallToAction from '@/components/CallToAction';
@@ -30,7 +29,6 @@ const Index = () => {
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />
-        <ImageUpload />
         <ExamplesSection />
         <PricingSection />
         <CallToAction />
