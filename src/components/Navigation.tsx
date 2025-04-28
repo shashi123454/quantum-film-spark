@@ -5,7 +5,7 @@ import { Menu } from 'lucide-react';
 
 const Navigation = () => {
   return (
-    <nav className="w-full py-4 px-6 flex justify-between items-center z-10">
+    <nav className="w-full py-4 px-6 flex justify-between items-center z-50 relative">
       <div className="flex items-center space-x-2">
         <div className="h-8 w-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-md animate-pulse-glow"></div>
         <span className="text-xl font-bold tracking-tight glow-text">MotionAI</span>
