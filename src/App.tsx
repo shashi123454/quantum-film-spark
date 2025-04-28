@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Remove App.css import since it's causing conflicts
+import './index.css';
+
 const queryClient = new QueryClient();
 
 const App = () => (
