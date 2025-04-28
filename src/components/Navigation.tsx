@@ -14,6 +14,8 @@ const Navigation = () => {
       <div className="hidden md:flex items-center space-x-8">
         <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
         <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How it Works</a>
+        <a href="#upload" className="text-gray-300 hover:text-white transition-colors">Create</a>
+        <a href="#examples" className="text-gray-300 hover:text-white transition-colors">Examples</a>
         <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
         <Button variant="outline" className="border-neon-blue text-neon-blue hover:bg-neon-blue/10">Sign In</Button>
         <Button className="bg-gradient-to-r from-neon-blue to-neon-purple hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]">Get Started</Button>
